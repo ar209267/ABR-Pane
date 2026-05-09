@@ -1,0 +1,36 @@
+CREATE DATABASE abr_panel;
+
+USE abr_panel;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    email VARCHAR(100),
+    password VARCHAR(255),
+    balance DECIMAL(10,2) DEFAULT 0,
+    role VARCHAR(20) DEFAULT 'user'
+);
+
+CREATE TABLE payments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    amount DECIMAL(10,2),
+    txn_id VARCHAR(255),
+    status VARCHAR(50) DEFAULT 'pending'
+);
+
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    service VARCHAR(255),
+    link TEXT,
+    quantity INT,
+    status VARCHAR(50) DEFAULT 'pending'
+);
+
+CREATE TABLE services (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    service_id VARCHAR(255),
+    name VARCHAR(255),
+    rate DECIMAL(10,2)
+);
