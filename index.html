@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ABR Pane</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      margin-top: 100px;
+    }
+
+    h1 {
+      color: #38bdf8;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #22c55e;
+      color: white;
+      font-size: 16px;
+    }
+
+    button.stop {
+      background: #ef4444;
+    }
+
+    .box {
+      margin-top: 20px;
+      padding: 20px;
+      background: #1e293b;
+      display: inline-block;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>ABR Pane</h1>
+
+    <div class="box">
+      <p>Status: <span id="status">Stopped</span></p>
+
+      <button onclick="start()">Start</button>
+      <button class="stop" onclick="stop()">Stop</button>
+    </div>
+  </div>
+
+  <script>
+    function start() {
+      document.getElementById("status").innerText = "Running";
+      console.log("ABR Pane Started");
+    }
+
+    function stop() {
+      document.getElementById("status").innerText = "Stopped";
+      console.log("ABR Pane Stopped");
+    }
+  </script>
+
+</body>
+</html>
